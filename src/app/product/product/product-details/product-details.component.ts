@@ -7,11 +7,18 @@ import { ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  public propertyId: number;
+
+  data:any;
+
   constructor(private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
-    this.propertyId = this.route.snapshot.params['id'];
+
+    this.route.queryParams.subscribe((params)=>{
+      console.log(params);
+      this.data = JSON.parse(params.data);
+    });
+
   }
   onBack(){
     this.router.navigate(['/']);

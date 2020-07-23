@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {path: 'checkout',component:CheckoutComponent,canActivate:[AuthGuard]},
   {
-    path:'productdetails/:id',component:ProductDetailsComponent
+    path:'productdetails',component:ProductDetailsComponent
   }
 ];
 
